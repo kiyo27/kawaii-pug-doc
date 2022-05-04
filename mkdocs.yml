@@ -1,0 +1,21 @@
+site_name: My Docs
+theme:
+  name: material
+
+plugins:
+  - tags:
+      tags_file: tags.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/bootstrap.min.css
+
+extra_javascript:
+  - javascripts/jquery.js
+  - javascripts/bootstrap.bundle.min.js
+
+nav:
+  - Home: index.md
