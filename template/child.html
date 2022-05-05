@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container" style="margin-bottom: 24px;">
-  
+<div class="container">
   <div class="row">
     <div class="col-md-12">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="border-radius: 0;">
           <li class="breadcrumb-item">VibitPug</li>
           <li class="breadcrumb-item">1</li>
         </ol>
-      </nav>
     </div>
   </div>
+</div>
 
-  <div class="row">
+<div class="container" style="margin-bottom: 24px;">
+  <div class="row" style="margin-left: 0; margin-right: 0;">
     <div class="col-md-12" style="background-color: #638596;">
       <img src="1.png" class="mx-auto d-block" style="margin-top: 90px;">
     </div> 
@@ -23,21 +22,21 @@
 <div class="container detail">
   <div class="row">
     <div class="col-md-10" style="margin-top: 20px;">
-      <h1 style="margin-top: 0px; margin-bottom: 5px;">VibitPug 1</h1>
-      <h4>One of <b>100</b> pugs</h4>
+      <h1 style="margin-top: 0px; margin-bottom: 5px;">VibitPug {{ pug.serial_no }}</h1>
+      <h4>One of <b>{{ pug.group_count }}</b> pugs</h4>
     </div>
   </div>
 
   <div class="row detail-row">
     <div class="col-md-10">
       <h3 style="margin-bottom: 5px;">Attributes</h3>
-      <p>This pug has <a href="#">3 attributes</a>, one of 2000 with that many.</p>
+      <p>This pug has <a href="#">{{ pug.attr_count }} attributes</a>, one of {{ pug.attr_group_count }} with that many.</p>
       <div class="row">
       {% for attr in pug.attributes %}
         <div class="col-md-4">
-          <a href="#">{{ attr }}</a>
+          <a href="#">{{ attr.name }}</a>
           <br>
-          <b>10</b>
+          <b>{{ attr.group_count }}</b>
             pugs have this.
         </div>
       {% endfor %}

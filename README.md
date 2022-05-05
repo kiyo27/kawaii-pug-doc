@@ -1,7 +1,7 @@
-# Kawaii Pug Documentaion
+# Vibit Pugs Documentaion
 
-running up server
+generate docs
 
 ```
-mkdocs serve
+python generate.py
 ```
